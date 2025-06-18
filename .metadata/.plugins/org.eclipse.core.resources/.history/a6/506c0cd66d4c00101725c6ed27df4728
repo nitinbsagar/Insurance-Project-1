@@ -1,0 +1,50 @@
+package com.example.serviceimpl;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.example.entity.DriverLicense;
+import com.example.exceptionclass.DriverIdNotFoundException;
+import com.example.repository.DriverLicenseRepository;
+import com.example.service.DriverLicensService;
+@Service
+public class DriverLicenseServiceImpl implements  DriverLicensService {
+	@Autowired
+	  private DriverLicenseRepository driverLicenseRepository;
+
+	@Override
+	public DriverLicense SaveDriverDetails(DriverLicense driverLicense) {
+		DriverLicense dl=driverLicenseRepository.save(driverLicense);
+		return dl;
+	}
+
+	@Override
+	public  DriverLicense getDriverLicenseById(Integer id) {
+		DriverLicense dl1=driverLicenseRepository.findById(id);
+		if (dl1 == null) {
+			throw new DriverIdNotFoundException("Driving id not present");
+			}
+		return dl1;
+	}
+			
+	
+
+	@Override
+	public  void deleteDriverDetails(Integer id) {
+		
+		driverLicenseRepository.deleteById(id);
+		
+		
+		
+		
+		
+	}
+
+	
+	}
+
+	
+
+	
+	
+

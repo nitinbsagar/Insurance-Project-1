@@ -9,4 +9,5 @@ import com.example.entity.DriverLicense;
 @Repository
 public interface  DriverLicenseRepository extends JpaRepository<DriverLicense, Serializable> {
 	public  DriverLicense findById(Integer id);
+	
 }

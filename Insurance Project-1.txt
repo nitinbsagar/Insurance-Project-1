@@ -20,11 +20,12 @@ ans -> 1 create SB Project ->add Dependencies-> Spring Boot Dev Tools, MySQL Dri
 	8.Create One Rest-Controller Layer 
 ******done***************
 Tessting 
+save data
 got to application.properties =>spring.jpa.hibernate.ddl-auto=create 
  runproject=> check Sql Database DriverLicense Table Created 
 then
 open postmen
-select post method
+select post method // save data in data base 
 url =>> http://localhost:8282/saveDriverDetails 
 got to body=>row=> Json => enter details as per entity
 {
@@ -36,12 +37,38 @@ got to body=>row=> Json => enter details as per entity
 } 
 Send
 
-see the responce to posmen
+see the response to posmen
 go to database and check 1 record save or updated 
  done
+************fetching data to database***********
+select post method => fetch
 
+ http://localhost:8282/getDriverDetailsByid/2 
+response
+{
+    "id": 3,
+    "diver_name": "ramesh",
+    "driver_phone": "906798010",
+    "numberlicense_id": 5021,
+    "license_type": "LL"
+}
 
+then not present see response => customException
+ http://localhost:8282/getDriverDetailsByid/7
+{
+    "message": "Driving id not present",
+    "throwable": null,
+    "status": "NOT_FOUND"
+}
 
  
+*****************delete by id********
+http://localhost:8282/deleteDriverLicensebyid/1 
+Response =>Selected Driver License Details Deleted
+
+http://localhost:8282/deleteDriverLicensebyid/7
+then not present see response => it will fecth details for deleteing but he not got data he given responce as
+Selected Driver License Details Deleted.
+
 
 

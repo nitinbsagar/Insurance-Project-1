@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.example.entity.DriverLicense;
+import com.example.exceptionclass.DriverIdNotFoundException;
 import com.example.service.DriverLicensService;
 
 @RestController
@@ -25,10 +26,12 @@ public class DriverLicenseRestcontroller {
 		DriverLicense id1 = driverLicensService.getDriverLicenseById(id);
 		return id1;
 	}
-	@DeleteMapping("/delete/{id}")
+	@DeleteMapping("/deleteDriverLicensebyid/{id}")
 	public String deleteDriverLicensebyid(@PathVariable("id")Integer id)throws Exception {
+		
 		driverLicensService.deleteDriverDetails(id);
-		return "delete sucessfully id";
+		
+		return "Selected Driver License Details Deleted";
 		
 		
 		

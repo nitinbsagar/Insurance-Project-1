@@ -1,11 +1,10 @@
 package com.example.serviceimpl;
 
-import java.util.Optional;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.example.entity.DriverLicense;
+import com.example.exceptionclass.DriverIdNotFoundException;
 import com.example.repository.DriverLicenseRepository;
 import com.example.service.DriverLicensService;
 @Service
@@ -16,7 +15,8 @@ public class DriverLicenseServiceImpl implements  DriverLicensService {
 	@Override
 	public DriverLicense SaveDriverDetails(DriverLicense driverLicense) {
 		DriverLicense dl=driverLicenseRepository.save(driverLicense);
-		return dl;
+		
+		return  dl;
 	}
 
 	@Override
@@ -31,13 +31,11 @@ public class DriverLicenseServiceImpl implements  DriverLicensService {
 	
 
 	@Override
-	public void deleteDriverDetails(Integer id) {
+	public  void deleteDriverDetails(Integer id) {
 		
 		driverLicenseRepository.deleteById(id);
-		System.out.println("Selected Driver License Details Deleted");
 		
-		
-	}
+		}
 
 	
 	}
