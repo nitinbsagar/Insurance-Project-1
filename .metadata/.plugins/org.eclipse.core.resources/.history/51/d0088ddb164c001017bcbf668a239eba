@@ -1,0 +1,41 @@
+package com.example.serviceimpl;
+
+import java.util.Optional;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.example.entity.DriverLicense;
+import com.example.repository.DriverLicenseRepository;
+import com.example.service.DriverLicensService;
+@Service
+public class DriverLicenseServiceImpl implements  DriverLicensService {
+	@Autowired
+	  private DriverLicenseRepository driverLicenseRepository;
+
+	@Override
+	public DriverLicense SaveDriver(DriverLicense driverLicense) {
+		DriverLicense dl=driverLicenseRepository.save(driverLicense);
+		return dl;
+	}
+
+	@Override
+	public DriverLicense getDriverById(Integer id) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public void deleteDriver(Integer id) {
+		driverLicenseRepository.deleteById(id);
+		
+	}
+
+	
+	}
+
+	
+
+	
+	
+}

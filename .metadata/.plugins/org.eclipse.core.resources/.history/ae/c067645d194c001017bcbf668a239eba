@@ -1,0 +1,12 @@
+package com.example.service;
+
+import com.example.entity.DriverLicense;
+
+public interface DriverLicensService {
+	
+	public  DriverLicense SaveDriverDetails(DriverLicense driverLicense);
+	/*public  DriverLicense getDriverById(Integer id);
+	public void deleteDriver(Integer id);*/
+	
+
+}

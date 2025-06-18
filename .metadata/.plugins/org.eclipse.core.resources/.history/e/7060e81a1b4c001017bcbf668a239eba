@@ -1,0 +1,22 @@
+package com.example.restcontroller;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RestController;
+
+import com.example.entity.DriverLicense;
+import com.example.service.DriverLicensService;
+
+@RestController
+public class DriverLicenseRestcontroller {
+	@Autowired
+	private DriverLicensService dls;
+	
+	@GetMapping("/getDriverLicenseById/{id}")
+	public DriverLicense getDriverLicenseById(@PathVariable("id") Integer id) { 
+		DriverLicense driverLicense = dls.getLicenseById(id);
+		return driverLicense;
+	}
+
+}

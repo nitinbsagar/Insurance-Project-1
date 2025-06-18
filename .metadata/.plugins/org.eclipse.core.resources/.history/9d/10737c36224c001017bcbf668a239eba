@@ -1,0 +1,62 @@
+package com.example.entity;
+
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+import jakarta.persistence.Table;
+@Entity
+@Table(name="DriverLicense")
+public class DriverLicense {
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	private Integer id;
+	private String diver_name;
+	private Integer driver_phone ;//Double
+	private Integer numberlicense_id;//string
+	private String license_type;
+	
+
+	//Constructor add
+	
+	public Integer getId() {
+		return id;
+	}
+	public void setId(Integer id) {
+		this.id = id;
+	}
+	public String getDiver_name() {
+		return diver_name;
+	}
+	public void setDiver_name(String diver_name) {
+		this.diver_name = diver_name;
+	}
+	public Integer getDriver_phone() {
+		return driver_phone;
+	}
+	public void setDriver_phone(Integer driver_phone) {
+		this.driver_phone = driver_phone;
+	}
+	public Integer getNumberlicense_id() {
+		return numberlicense_id;
+	}
+	public void setNumberlicense_id(Integer numberlicense_id) {
+		this.numberlicense_id = numberlicense_id;
+	}
+	public String getLicense_type() {
+		return license_type;
+	}
+	public void setLicense_type(String license_type) {
+		this.license_type = license_type;
+	}
+	
+	@Override
+	public String toString() {
+		return "DriverLicense [id=" + id + ", diver_name=" + diver_name + ", driver_phone=" + driver_phone
+				+ ", numberlicense_id=" + numberlicense_id + ", license_type=" + license_type + "]";
+	}
+	
+	
+	
+	
+}

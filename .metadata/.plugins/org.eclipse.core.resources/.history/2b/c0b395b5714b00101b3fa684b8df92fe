@@ -1,0 +1,9 @@
+package com.example.service;
+
+import com.example.entity.DriverLicense;
+
+public interface DriverLicensService {
+	
+	public boolean saveDriverLicenseDetails(String diver_name,Integer driver_phone ,Integer numberlicense_id,String license_type);
+
+}

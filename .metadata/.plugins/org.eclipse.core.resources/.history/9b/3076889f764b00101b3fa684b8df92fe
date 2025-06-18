@@ -1,0 +1,34 @@
+package com.example.serviceimpl;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.example.entity.DriverLicense;
+import com.example.repository.DriverLicenseRepository;
+import com.example.service.DriverLicensService;
+@Service
+public class DriverLicenseServiceImpl implements  DriverLicensService {
+	@Autowired
+	  private DriverLicenseRepository driverLicenseRepository;
+
+	@Override
+	public void saveDriverLicenseDetails() {
+		DriverLicense dld=new DriverLicense();
+		dld.setDiver_name("suni");
+		dld.setDriver_phone(95614368);
+		dld.setNumberlicense_id(1234);
+		dld.setLicense_type("LL");
+		
+	}
+
+	@Override
+	public DriverLicense getLicenseById(Integer id) {
+		Optional<DriverLicense>license=driverLicenseRepository.findById(id);
+		return null;
+	}
+
+	
+
+	
+	
+}

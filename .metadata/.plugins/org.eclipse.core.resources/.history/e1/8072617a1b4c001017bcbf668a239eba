@@ -1,0 +1,21 @@
+package com.example.restcontroller;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RestController;
+
+import com.example.entity.DriverLicense;
+import com.example.service.DriverLicensService;
+
+@RestController
+public class DriverLicenseRestcontroller {
+	@Autowired
+	private DriverLicensService driverLicensService;
+	
+	@PostMapping("/saveDriverDetails")
+	public DriverLicense saveDriverDetails(@RequestBody DriverLicense driverLicense) {
+	    return driverLicensService.SaveDriverDetails(driverLicense);
+	}
+
+}

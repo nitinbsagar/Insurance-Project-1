@@ -1,0 +1,9 @@
+package com.example.service;
+
+import com.example.entity.DriverLicense;
+
+public interface Driverservice {
+	
+	public DriverLicense getDriverLicenseById(Integer id);
+
+}

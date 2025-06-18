@@ -1,0 +1,47 @@
+Insurance Project-1
+
+827 create one model class as driver license details for driver microservice. also add curd opration
+
+1.Create One Model Class As a - Driver License(Add driver details like diver-name,driver-phone numberlicense-id, license type,)*
+2.Create One Service Layer 
+3. Create One Service implementation Layer
+4. Create One Repository Layer
+5.Create One Rest-Controller Layer
+6.Exception Class => 
+
+ans -> 1 create SB Project ->add Dependencies-> Spring Boot Dev Tools, MySQL Drivers, Spring Web, spring data jpa,
+	2.open application.properties and write code for DB conection
+=>
+	3.Create One Model Class As a - Driver License(Add driver details like diver-name,driver-phone numberlicense-id, license type like LL,NT,TR,)
+	4.Create One Repository Layer
+	5.Exception Class
+	6.Create One Service Layer
+	7.Create One Service implementation Layer
+	8.Create One Rest-Controller Layer 
+******done***************
+Tessting 
+got to application.properties =>spring.jpa.hibernate.ddl-auto=create 
+ runproject=> check Sql Database DriverLicense Table Created 
+then
+open postmen
+select post method
+url =>> http://localhost:8282/saveDriverDetails 
+got to body=>row=> Json => enter details as per entity
+{
+"diver_name":"nitin",
+"driver_phone":"9561436890",
+"numberlicense_id":"5021",
+"license_type":"NT"
+
+} 
+Send
+
+see the responce to posmen
+go to database and check 1 record save or updated 
+ done
+
+
+
+ 
+
+

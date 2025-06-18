@@ -1,0 +1,15 @@
+package com.example.serviceimpl;
+
+import com.example.entity.DriverLicense;
+import com.example.service.DriverLicensService;
+
+public class DriverLicenseServiceImpl implements  DriverLicensService {
+
+	
+	@Override
+	public DriverLicense getDriverLicenseById(Integer id) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+}
